@@ -1,0 +1,10 @@
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\factory\Report.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\template\ReportProcessor.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\strategy\InvoiceProcessStrategy.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\strategy\ProcessStrategy.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\DocumentProcessingSystem.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\template\DocumentProcessor.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\factory\Document.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\template\InvoiceProcessor.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\factory\Invoice.java
+C:\workarea\notes\factorystrategytemplate\DocumentProcessingSystem\src\main\java\com\dxtr\strategy\ReportProcessStrategy.java

@@ -1,0 +1,10 @@
+com\dxtr\strategy\ProcessStrategy.class
+com\dxtr\DocumentProcessingSystem.class
+com\dxtr\factory\Document.class
+com\dxtr\template\DocumentProcessor.class
+com\dxtr\factory\Report.class
+com\dxtr\strategy\InvoiceProcessStrategy.class
+com\dxtr\strategy\ReportProcessStrategy.class
+com\dxtr\template\InvoiceProcessor.class
+com\dxtr\factory\Invoice.class
+com\dxtr\template\ReportProcessor.class

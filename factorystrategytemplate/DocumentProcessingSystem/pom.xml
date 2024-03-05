@@ -50,7 +50,7 @@
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>3.0.0</version>
                     <configuration>
-                        <mainClass>${project.groupId}.App</mainClass>
+                        <mainClass>${project.groupId}.DocumentProcessingSystem</mainClass>
                         </configuration>
                     </plugin>
                 </plugins>
