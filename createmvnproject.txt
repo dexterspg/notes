@@ -3,3 +3,8 @@ mvn archetype:generate
 
 add wrapper
 mvn -N wrapper:wrapper
+
+view Maven properties
+mvn help:effective-pom
+ex. ${project.groupId}  gives the groupId
+
