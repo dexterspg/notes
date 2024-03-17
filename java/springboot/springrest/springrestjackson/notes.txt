@@ -1,0 +1,12 @@
+Jackson allows json to pojo and pojo to json conversion (deserialization and serialization)
+
+Path Variable reads to  get specific record
+    the path variable should match with the argument variable
+
+for exception handling
+    need a class that stores the error response ex. StudentErrorResponse  that accepts status, message and timestamp
+    need a custom exception class that handle exception and sends the error response when exception was thrown
+    @ExceptionHandler is annotation used for handling REst exception
+
+    for global exception for  a pojo created, we can create a custom class and annotate it with @ControllerAdvice while methods with @ExceptionHandler
+        @ControllerAdvice is similar to interceptor/filter (real-time use of AOP)
