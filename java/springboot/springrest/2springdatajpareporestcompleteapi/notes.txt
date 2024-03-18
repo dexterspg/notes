@@ -1,0 +1,19 @@
+
+CRUD
+  
+Create               /api/entities         @PostMapping      @RequestBody    pass entity
+Read  All entities   /api/entities         @GetMapping         none           none
+Read  entity         /api/entities/{id}    @GetMapping       @PathVariable   pass id
+Update               /api/entities         @PutMapping       @RequestBody    pass entity
+Delete               /api/entities/{id}    @DeleteMapping    @PathVariable   pass id
+    
+
+
+
+
+Service Layer
+    allows us to intergrate mulitple data sources
+
+    apply @Transactional on Service method
+        when modifying database such as save and delete
+        however when usign JPARepository we do not need @Transactional as it integrated in the JPARepository
