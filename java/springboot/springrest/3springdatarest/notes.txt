@@ -1,0 +1,36 @@
+Spring Data Rest
+    no need for controller and service
+
+HATEOS
+   allows REST access resource 
+
+dependency to add
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+
+add in Repository
+  @RepositoryRestResource(path="employees")
+ 
+
+allows adding base path such as  <base path/employees
+spring.data.rest.base-path=<add base path>
+
+
+for HTTP put request, add the number after the path not in the request body
+
+page size
+
+spring.data.rest.default-page-size=3
+
+in url as params   http://localhost:8765/api/employees?page=0&size=2
+
+sort 
+    ascending
+        ?sort=lastName
+    descendding
+        ?sort=lastName,desc
+    combination
+        ?sort=lastName,firstName,asc
