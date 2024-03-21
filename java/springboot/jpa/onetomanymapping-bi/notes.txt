@@ -1,0 +1,62 @@
+log how sql exectes
+
+#log sql statements
+logging.level.org.hibernate.SQL=trace
+#log sql values
+logging.level.org.hibernate.orm.jdbc.bind=trace
+
+
+@OneToMany
+
+Instructor has Courses
+
+Course is the owning side so it has the JoinColumn for Instructor
+
+Courses will have mappedBy referencing the constructor
+    this way Hibernate knows which Instructor mapped to the courses
+     
+In real life , we do not want to delete Instructor when deleting courses and vice versa
+        CascadeType.DELETE is remove
+
+Do not forget to add bidirectional link in Instructor when adding course
+
+    public void add(Course tempCourse) {
+        if (courses == null) {
+            courses = new ArrayList<>();
+        }
+        courses.add(tempCourse);
+        tempCourse.setInstructor(this);
+    }
+
+
+#create Instructor -> instructor_detail -> courses
+    actual creation: wtih fk first or with dependency first
+     so course -> instructor ->  instructor_detail
+
+
+Lazy Loading for courses(preferable)
+    when we are for example, in masterview and courses are in view details or not needed yet
+
+Fetch Type Defaults
+    @OneToOne FetchType.EAGER
+    @OneToMany FetchType.LAZY
+    @ManyToOne FetchType.EAGER
+    @ManyToMany FetchType.LAZY
+
+
+
+	private void findInstructor(AppDAO appDAO) {
+        //if courses FetchType.Lazy  of Instructor it will throw error because session close
+        //solution add a method find in DAO
+            List<Course> findCoursesByInstructorId(int theId);
+            we used query language to find courses 
+
+        in the findCourses session is already close so you need to set the courses to instructor
+		tempInstructor.setCourses(courses); //do not forget
+        //better way add JOIN Fetch
+    TypedQuery<Instructor> query = entityManager.createQuery(
+                "select i from Instructor i "
+                        + "JOIN FETCH i.courses "
+                        + "JOIN FETCH i.instructorDetail "
+                        + "where i.id = :data",
+                Instructor.class);

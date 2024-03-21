@@ -1,0 +1,18 @@
+log how sql exectes
+
+#log sql statements
+logging.level.org.hibernate.SQL=trace
+#log sql values
+logging.level.org.hibernate.orm.jdbc.bind=trace
+
+
+one to one unidirectional
+
+#create Instructor : instructor_detail created first before instructor
+
+
+#findInstructor : hibernate implements a left join 
+DEBUG 47552 --- [demo] [  restartedMain] org.hibernate.SQL: select i1_0.id,i1_0.email,i1_0.first_name,id1_0.id,id1_0.hobby,id1_0.youtube_channel,i1_0.last_name from instructor i1_0 left join instructor_detail id1_0 on id1_0.id=i1_0.fk_instructordetailid where i1_0.id=?
+
+#delete instructor : instructor deleted first then instructor_detail
+

@@ -1,0 +1,37 @@
+log how sql exectes
+
+#log sql statements
+logging.level.org.hibernate.SQL=trace
+#log sql values
+logging.level.org.hibernate.orm.jdbc.bind=trace
+
+
+@ManyToOne uni-directional
+
+Course had many reviews
+
+    @OneToMany(cascade =  CascadeType.ALL)
+    @JoinColumn(name ="fk_courseId")
+    private List<Review> reviews;
+
+Course is the owning side so it has the JoinColumn since it is one directional
+     
+Remember bidirectional link in Instructor when adding course
+    public void add(Course tempCourse) {
+        if (courses == null) {
+            courses = new ArrayList<>();
+        }
+        courses.add(tempCourse);
+        tempCourse.setInstructor(this);
+    }
+
+so for Course and Review
+
+public void addReview(Review review){
+        if(reviews == null){
+            reviews = new ArrayList<>();
+        }
+        reviews.add(review);
+    }
+
+

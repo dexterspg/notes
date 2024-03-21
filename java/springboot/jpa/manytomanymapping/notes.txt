@@ -1,0 +1,53 @@
+log how sql exectes
+
+#log sql statements
+logging.level.org.hibernate.SQL=trace
+#log sql values
+logging.level.org.hibernate.orm.jdbc.bind=trace
+
+
+@ManyToOne uni-directional
+
+Course had many reviews
+
+    @OneToMany(cascade =  CascadeType.ALL)
+    @JoinColumn(name ="fk_courseId")
+    private List<Review> reviews;
+
+Course is the owning side so it has the JoinColumn since it is one directional
+     
+Remember bidirectional link in Instructor when adding course
+    public void add(Course tempCourse) {
+        if (courses == null) {
+            courses = new ArrayList<>();
+        }
+        courses.add(tempCourse);
+        tempCourse.setInstructor(this);  //only applies to this @OneToMany
+    }
+
+so for Course and Review
+
+public void addReview(Review review){
+        if(reviews == null){
+            reviews = new ArrayList<>();
+        }
+        reviews.add(review);
+    }
+
+Note: JOIN FETCH only works for one relation. We cannot add one more
+@Override
+    public Course findCourseAndStudentsByCourseId(int theId) {
+        TypedQuery<Course> query = entityManager.createQuery(
+                "select c from Course c "
+                        + "JOIN FETCH c.students "
+                        + "where c.id = :data",
+                Course.class);
+        query.setParameter("data", theId);
+        Course course = query.getSingleResult();
+        return course;
+
+    }
+
+
+add method
+    back reference (set(this)) only applies to One To Many (Instructor to Courses)
