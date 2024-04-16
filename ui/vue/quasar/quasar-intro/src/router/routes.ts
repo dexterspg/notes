@@ -37,6 +37,14 @@ const routes: RouteRecordRaw[] = [
         path: 'qcard',
         component: () => import('pages/LearnQuasarComponents/QCardPage.vue'),
       },
+      {
+        path: 'qtoolbar',
+        component: () => import('pages/LearnQuasarComponents/QToolbarPage.vue'),
+      },
+      {
+        path: 'qimg',
+        component: () => import('pages/LearnQuasarComponents/QImgPage.vue'),
+      },
     ],
   },
 

@@ -1,6 +1,15 @@
-export default  [
+export default [
   {
     label: 'QCard',
-    to: '/qcard'
+    to: '/qcard',
   },
+  {
+    label: 'QToolbar',
+    to: '/qtoolbar',
+  },
+ {
+    label: 'QImg',
+    to: '/qimg',
+  },
+
 ];

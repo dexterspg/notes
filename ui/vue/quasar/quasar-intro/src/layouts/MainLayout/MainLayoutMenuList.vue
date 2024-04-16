@@ -5,7 +5,7 @@
       to="/users">
       <q-item-section>
         <q-item-label>
-        Menu
+           Menu
         </q-item-label>
       </q-item-section>
     </q-item>

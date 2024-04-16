@@ -8,8 +8,16 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          Title
+          My App
         </q-toolbar-title>
+
+        <q-tabs>
+          <q-tab>Podcasts</q-tab>
+          <q-tab>Blog</q-tab>
+          <q-tab>Videos</q-tab>
+        </q-tabs>
+
+
       </q-toolbar>
 
       <q-tabs align="left">
