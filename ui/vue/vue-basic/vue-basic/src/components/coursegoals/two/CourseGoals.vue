@@ -25,7 +25,8 @@ export default {
   components: {
     CourseGoalItem,
   },
-  inject: ["goals"],
+  props: ["goals"],
+  emits: ["addGoal", "deleteGoalById"],
   data() {
     return {
       newGoal: "",

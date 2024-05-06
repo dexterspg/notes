@@ -1,5 +1,5 @@
 <template>
-  <li  @click="$emit('deleteGoalById',id)" >
+  <li @click="$emit('deleteGoalById', id)">
     {{ id }}
     {{ name }}
   </li>
@@ -9,12 +9,11 @@
 export default {
   name: "CourseGoalItem",
   props: ["id", "name"],
+  emits: ["deleteGoalById"],
   data() {
     return {};
   },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader.vue";
-import CourseGoals from "./components/3coursegoals/CourseGoals.vue";
+import TheHeader from "../components/TheHeader.vue";
+import CourseGoals from "../components/coursegoals/three/CourseGoals.vue";
 
 export default {
   name: "App",
@@ -44,6 +44,7 @@ export default {
       }
 
       this.goals.push({ id: currId, name: newGoal });
+       console.log(this.goals);
       this.newGoal = "";
     },
     deleteGoalById(id) {
@@ -52,7 +53,7 @@ export default {
       if (idx !== -1) this.goals.splice(idx, 1);
     },
   },
-  created() {
+  mounted() {
     this.goals = [
       {
         id: 1,

@@ -7,25 +7,27 @@
 
   <p v-if="goals.length === 0">No goals found</p>
   <ul else>
-        <CourseGoalItem 
-            v-for="goal in goals"
-            :key="goal.id"
-            :id="goal.id"
-            :name="goal.name"
-            @deleteGoalById="deleteGoalById"
-        />
-    </ul>
+    <CourseGoalItem
+      v-for="goal in goals"
+      :key="goal.id"
+      :id="goal.id"
+      :name="goal.name"
+      @deleteGoalById="deleteGoalById"
+    />
+  </ul>
 </template>
 
 <script>
-import CourseGoalItem from "./CourseGoalItem.vue";  
+import CourseGoalItem from "./CourseGoalItem.vue";
 
 export default {
   name: "CourseGoals",
   components: {
     CourseGoalItem,
   },
-  props: ["goals"],
+  inject: ["goals"],
+  emits: ["deleteGoalById"],
+
   data() {
     return {
       newGoal: "",

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader.vue";
-import CourseGoals from "./components/1coursegoals/CourseGoals.vue";
+import TheHeader from "../components/TheHeader.vue";
+import CourseGoals from "../components/coursegoals/one/CourseGoals.vue";
 
 export default {
   name: "App",
@@ -24,20 +24,7 @@ export default {
   },
   methods: {
     addGoal(newGoal) {
-      let currId = 1;
-
-      for (let i = 1; i <= this.goals.length; ++i) {
-        if (!this.goals.find((item) => item.id === i)) {
-          console.log(currId);
-          currId = i;
-          break;
-        }
-        currId = i + 1;
-      }
-
-
-      this.goals.push({ id: currId, name: newGoal });
-      this.newGoal = "";
+      this.goals.push(newGoal);
     },
     deleteGoalById(id) {
       console.log("Deleting id :::" + id);

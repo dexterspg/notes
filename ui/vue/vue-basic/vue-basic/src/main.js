@@ -1,5 +1,20 @@
-import { createApp } from 'vue'
-import App from './App3.vue'
+import { createApp } from "vue";
+import App from "./goaldynamiccomponentapp/AppTwo.vue";
+import GlobalComponent from "./components/GlobalComponent.vue";
 
-createApp(App).mount('#app')
+const unmountApp = createApp(App);
 
+unmountApp.mount("#unmountApp");
+
+setTimeout(() => {
+  console.log("unmounting #unmountApp from main.js");
+  unmountApp.unmount("#unmountApp");
+}, 1000);
+
+const app = createApp(App);
+app.component("GlobalComponent", GlobalComponent);
+
+setTimeout(() => {
+  console.log("mounting to #app from main.js");
+  app.mount("#app");
+}, 1000);
