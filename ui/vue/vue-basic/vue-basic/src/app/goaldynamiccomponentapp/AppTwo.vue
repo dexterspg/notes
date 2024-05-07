@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import ActiveGoals from "../components/goaldynamiccomponent/two/ActiveGoals.vue";
-import ManageGoals from "../components/goaldynamiccomponent/two/ManageGoals.vue";
+import ActiveGoals from "../../components/goaldynamiccomponent/two/ActiveGoals.vue";
+import ManageGoals from "../../components/goaldynamiccomponent/two/ManageGoals.vue";
 
 export default {
   components: {

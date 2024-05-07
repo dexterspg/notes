@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue";
-import BadgeList from "../components/badge/one/BadgeList.vue";
-import UserInfo from "../components/badge/one/UserInfo.vue";
+import TheHeader from "../../components/TheHeader.vue";
+import BadgeList from "../../components/badge/one/BadgeList.vue";
+import UserInfo from "../../components/badge/one/UserInfo.vue";
 
 export default {
   components: {

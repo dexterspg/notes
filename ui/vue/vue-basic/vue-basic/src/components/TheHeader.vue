@@ -8,8 +8,6 @@
         props: ["title"]
         
     }
-
-
 </script>
 
 <style scoped>

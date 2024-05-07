@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue";
-import CourseGoals from "../components/coursegoals/one/CourseGoals.vue";
+import TheHeader from "../../components/TheHeader.vue";
+import CourseGoals from "../../components/coursegoals/one/CourseGoals.vue";
 
 export default {
   name: "App",

@@ -4,7 +4,7 @@
   <button @click="setGoal">Set Goal</button>
   <teleport to="body">
     <ErrorAlert v-if="invalidInput" errorMessage="Input is Empty">
-      <p>You did not enter a any text</p>
+      <p>You did not enter any text</p>
       <button @click="closeError">OK</button>
     </ErrorAlert>
   </teleport>

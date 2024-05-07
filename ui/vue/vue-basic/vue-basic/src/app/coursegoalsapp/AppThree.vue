@@ -1,15 +1,11 @@
 <template>
   <TheHeader :title="title" />
-  <CourseGoals
-    :goals="goals"
-    @addGoal="addGoal"
-    @deleteGoalById="deleteGoalById"
-  />
+  <CourseGoals @addGoal="addGoal" @deleteGoalById="deleteGoalById" />
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue";
-import CourseGoals from "../components/coursegoals/two/CourseGoals.vue";
+import TheHeader from "../../components/TheHeader.vue";
+import CourseGoals from "../../components/coursegoals/three/CourseGoals.vue";
 
 export default {
   name: "App",
@@ -17,14 +13,25 @@ export default {
     TheHeader,
     CourseGoals,
   },
+  provide() {
+    return {
+      goals: this.goals,
+    };
+  },
   data() {
     return {
       title: "My Course Goals",
-      goals: [],
+      goals: [
+        {
+          id: 1,
+          name: "Study Java",
+        },
+      ],
     };
   },
   methods: {
     addGoal(newGoal) {
+      console.log(newGoal);
       let currId = 1;
 
       for (let i = 1; i <= this.goals.length; ++i) {
@@ -37,6 +44,7 @@ export default {
       }
 
       this.goals.push({ id: currId, name: newGoal });
+       console.log(this.goals);
       this.newGoal = "";
     },
     deleteGoalById(id) {

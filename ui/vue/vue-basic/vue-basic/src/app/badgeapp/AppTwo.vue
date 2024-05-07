@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue";
-import BadgeList from "../components/badge/two/BadgeList.vue";
-import UserInfo from "../components/badge/two/UserInfo.vue";
-import SlotWithData from "../components/badge/two/SlotWithData.vue";
+import TheHeader from "../../components/TheHeader.vue";
+import BadgeList from "../../components/badge/two/BadgeList.vue";
+import UserInfo from "../../components/badge/two/UserInfo.vue";
+import SlotWithData from "../../components/badge/two/SlotWithData.vue";
 
 export default {
   components: {
