@@ -43,7 +43,9 @@
       <label for="other">Other</label>
     </div>
 
-    <RatingControl v-model="rating" />
+    <div>
+      <RatingControl v-model="rating"></RatingControl>
+    </div>
     <div>
       <input
         type="checkbox"
@@ -54,7 +56,7 @@
       <label for="agreeterms">Agree to terms of use?</label>
     </div>
 
-    <button @click="submitForm">Submit</button>
+    <button>Submit</button>
   </form>
 </template>
 
@@ -90,8 +92,7 @@ export default {
       console.log(this.learnInput);
       console.log(this.agreeterms);
 
-      console.log(this.rating);
-      this.rating = null;
+      console.log("Rating:" + this.rating);
     },
     validateNameInput() {
       this.nameValidity = this.name === "" ? false : true;

@@ -1,20 +1,20 @@
 <template>
   <ul>
     <div>
-      <li :class="{ active: activeOption === 'poor' }">
-        <button @click="selectRating('poor')">Poor</button>
+      <li :class="{ active: modelValue === 'poor' }">
+        <button type="button" @click="selectRating('poor')">Poor</button>
       </li>
     </div>
 
     <div>
-      <li :class="{ active: activeOption === 'average' }">
-        <button @click="selectRating('average')">Average</button>
+      <li :class="{ active: modelValue === 'average' }">
+        <button type="button" @click="selectRating('average')">Average</button>
       </li>
     </div>
 
     <div>
-      <li :class="{ active: activeOption === 'great' }">
-        <button @click="selectRating('great')">Great</button>
+      <li :class="{ active: modelValue === 'great' }">
+        <button type="button" @click="selectRating('great')">Great</button>
       </li>
     </div>
   </ul>
@@ -26,16 +26,21 @@ export default {
   emits: ["update:modelValue"],
   data() {
     return {
-      activeOption: this.modelValue,
+      // activeOption: this.modelValue,
     };
   },
+  // computed: {
+  // activeOption() {
+  // return this.modelValue;
+  // },
+  // },
   methods: {
     selectRating(option) {
       // console.log(option);
-      this.activeOption = option;
+      // this.activeOption = option;
       this.$emit("update:modelValue", option);
-    },
   },
+    },
 };
 </script>
 
