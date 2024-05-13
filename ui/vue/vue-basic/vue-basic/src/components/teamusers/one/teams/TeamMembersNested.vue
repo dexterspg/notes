@@ -10,7 +10,7 @@
     :name="member.name"
   />
 
-  <router-link to="/teams/one/t2">go to team 2</router-link>
+  <router-link to="/teams/three/t2">go to team 2</router-link>
 </template>
 
 <script>
@@ -19,6 +19,7 @@ export default {
   components: {
     UserItem,
   },
+  props: ["teamId"],
   inject: ["teams", "users"],
   data() {
     return {
@@ -30,9 +31,8 @@ export default {
     goToTeams() {
       this.$router.push("/teams");
     },
-    loadMembers(route) {
-      const teamId = route.params.teamId;
-
+    loadMembers(teamId) {
+      console.log(teamId);
       const foundTeam = this.teams.find((e) => e.id === teamId);
       const members = [];
       foundTeam.members.forEach((id) => {
@@ -44,11 +44,11 @@ export default {
     },
   },
   created() {
-    this.loadMembers(this.$route); //create routes only initially
+    this.loadMembers(this.teamId);
   },
   watch: {
-    $route(newValue) {
-      this.loadMembers(newValue); //allow recreate route when destroyed
+    teamId(id) {
+      this.loadMembers(id);
     },
   },
 };

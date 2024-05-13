@@ -13,10 +13,10 @@ export default [
   },
   {
     id: "u4",
-    name: "Alex Blackfield",
+    name: "Marie Smith",
   },
   {
     id: "u5",
-    name: "Marie Smith",
+    name: "Alex Blackfield",
   },
 ];
