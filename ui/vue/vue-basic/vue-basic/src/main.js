@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import App from "./app/teamusersapp/App.vue";
-import router from "./app/teamusersapp/routes.js";
+import App from "./app/vuexapp/App.vue";
+import router from "./app/teamusersapp/router.js";
 import GlobalComponent from "./components/GlobalComponent.vue";
 
 // const unmountApp = createApp(App);

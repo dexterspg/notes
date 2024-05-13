@@ -1,5 +1,5 @@
 <template>
-  <TheHeader title="Form" />
+  <TheHeader title="No Title" />
 </template>
 
 <script>
