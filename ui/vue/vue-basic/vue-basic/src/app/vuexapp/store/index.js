@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import products from "./modules/products.js";
+import products from "./modules/product/products.js";
 
 const globalStateModule = {
   state() { //global state not accessible to the store, hence, use getters

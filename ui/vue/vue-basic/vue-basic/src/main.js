@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./app/vuexapp/App.vue";
-import store from "./app/vuexapp/store/index.js";
+// import store from "./app/vuexapp/store/index.js";
+import store from "./app/vuexapp/storeMoreStructuring/index.js";
 // import router from "./app/vuexapp/router.js";
 import GlobalComponent from "./components/GlobalComponent.vue";
 

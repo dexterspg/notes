@@ -20,7 +20,7 @@
     <h3>Duplicate count (using getters): {{ duplicateCountWithGetter }}</h3>
     <p>Check over 10 : {{ checkCountOver10WithGetterWithGetterArg }}</p>
     <p>Duplicate count using mapGetters : {{ duplicateCount }}</p>
-    <p>Duplicate count using mapGetters with rename : {{ dupCount}}</p>
+    <p>Duplicate count using mapGetters with rename : {{ dupCount }}</p>
   </div>
 </template>
 
