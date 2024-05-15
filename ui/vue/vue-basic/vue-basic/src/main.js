@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./app/vuexapp/App.vue";
-import router from "./app/teamusersapp/router.js";
+import store from "./app/vuexapp/store/index.js";
+// import router from "./app/vuexapp/router.js";
 import GlobalComponent from "./components/GlobalComponent.vue";
 
 // const unmountApp = createApp(App);
@@ -15,7 +16,8 @@ import GlobalComponent from "./components/GlobalComponent.vue";
 const app = createApp(App);
 app.component("GlobalComponent", GlobalComponent);
 
-app.use(router);
+// app.use(router);
+app.use(store);
 
 // setTimeout(() => {
 // console.log("mounting to #app from main.js");

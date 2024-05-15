@@ -8,17 +8,20 @@
         goal.name
       }}
     </ul>
-      {{
-        slotProps.anotherProp
-      }}
+    {{ slotProps.anotherProp }}
+    <button @click="slotProps.addItem">add item</button>
   </SlotWithData>
 
-    <SlotWithData>
-        <template #nameSlot="slpr">
-            <p>{{ slpr.item }}</p>
-        </template>
+  <SlotWithData>
+    <template #nameSlot="slpr">
+      <p>{{ slpr.item }}</p>
+    </template>
 
-    </SlotWithData>
+    <template #increment="{ count, increment }">
+            {{ count }}
+            <button  @click="increment">Add 1</button>
+        </template>
+  </SlotWithData>
 </template>
 
 <script>

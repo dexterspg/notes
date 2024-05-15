@@ -1,6 +1,6 @@
 <template>
     <h2>{{ title }}</h2>
-  <slot :count="count"  :increment="increment">
+  <slot>
         <p>No button</p>
   </slot>
 </template>
@@ -10,13 +10,9 @@ export default {
   props: ["title"],
   data() {
     return {
-            count : 4
         };
   },
     methods: {
-        increment(){
-            this.count++;
-        }
     }
 };
 </script>
