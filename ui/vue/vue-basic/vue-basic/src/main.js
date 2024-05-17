@@ -1,8 +1,11 @@
 import { createApp } from "vue";
-import App from "./app/vuexapp/App.vue";
+// import App from "./app/vuexapp/App.vue";
 // import store from "./app/vuexapp/store/index.js";
-import store from "./app/vuexapp/storeMoreStructuring/index.js";
+// import store from "./app/vuexapp/storeMoreStructuring/index.js";
+// import store from "./app/vuexapp/store/index.js";
 // import router from "./app/vuexapp/router.js";
+
+import App from "./app/mixinapp/App.vue";
 import GlobalComponent from "./components/GlobalComponent.vue";
 
 // const unmountApp = createApp(App);
@@ -18,7 +21,7 @@ const app = createApp(App);
 app.component("GlobalComponent", GlobalComponent);
 
 // app.use(router);
-app.use(store);
+// app.use(store);
 
 // setTimeout(() => {
 // console.log("mounting to #app from main.js");
