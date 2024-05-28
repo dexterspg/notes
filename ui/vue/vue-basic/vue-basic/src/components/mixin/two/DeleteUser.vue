@@ -11,19 +11,24 @@
 
 <script>
 import UserAlert from "./UserAlert.vue";
-import alertMixin from "./mixins/alert.js";
+import { ref } from "vue";
 
 export default {
   components: {
     UserAlert,
   },
-  data() {
+  setup() {
+    const alertTitle = ref("Delete User");
+    const alertIsVisible = ref(false);
+    const showAlert = () => (alertIsVisible.value = true);
+    const hideAlert = () => (alertIsVisible.value = false);
     return {
-      alertTitle: "Delete User",
+      alertTitle,
+      alertIsVisible,
+      showAlert,
+      hideAlert,
     };
   },
-  mixins: [alertMixin], // alertMixin data merge with data
-                        //but if same property is in component and mixins                         // component data will override or wins than the mixin
 };
 </script>
 

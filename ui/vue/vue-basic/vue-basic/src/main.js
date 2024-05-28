@@ -5,8 +5,9 @@ import { createApp } from "vue";
 // import store from "./app/vuexapp/store/index.js";
 // import router from "./app/vuexapp/router.js";
 
-import App from "./app/mixinapp/App.vue";
 import GlobalComponent from "./components/GlobalComponent.vue";
+import App from "./app/mixinapp/AppTwo.vue";
+// import globalMixin from "./components/mixin/two/mixins/globalMixinLogger.js";
 
 // const unmountApp = createApp(App);
 
@@ -22,6 +23,7 @@ app.component("GlobalComponent", GlobalComponent);
 
 // app.use(router);
 // app.use(store);
+// app.mixin(globalMixin);
 
 // setTimeout(() => {
 // console.log("mounting to #app from main.js");
