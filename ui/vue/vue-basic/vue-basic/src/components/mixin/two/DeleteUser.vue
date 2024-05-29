@@ -11,6 +11,7 @@
 
 <script>
 import UserAlert from "./UserAlert.vue";
+import useAlert from "./hooks/alert.js";
 import { ref } from "vue";
 
 export default {
@@ -19,9 +20,8 @@ export default {
   },
   setup() {
     const alertTitle = ref("Delete User");
-    const alertIsVisible = ref(false);
-    const showAlert = () => (alertIsVisible.value = true);
-    const hideAlert = () => (alertIsVisible.value = false);
+    const [alertIsVisible, showAlert, hideAlert] = useAlert(false);
+
     return {
       alertTitle,
       alertIsVisible,
