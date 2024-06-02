@@ -6,8 +6,13 @@ import { createApp } from "vue";
 // import router from "./app/vuexapp/router.js";
 
 import GlobalComponent from "./components/GlobalComponent.vue";
-import App from "./app/mixinapp/AppTwo.vue";
-// import globalMixin from "./components/mixin/two/mixins/globalMixinLogger.js";
+// import App from "./app/mixinapp/AppTwo.vue";
+// import globalMixin from "./components/mixin/one/mixins/globalMixinLogger.js";
+
+
+import App from "./app/compositionsapp/App.vue";
+// import App from "./app/demoapp/options/App.vue";
+// import store from "./app/demoapp/options/store/index.js";
 
 // const unmountApp = createApp(App);
 
