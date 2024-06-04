@@ -6,6 +6,8 @@ const store = createStore({
     return {
       users: users,
       projects: [],
+      filteredProjects: [],
+      filteredUsers: users,
     };
   },
   getters: {
@@ -13,15 +15,47 @@ const store = createStore({
       return state.users;
     },
     projects(state) {
-      return state.projects;
+      console.log(state.filteredProjects);
+      return state.filteredProjects;
+    },
+    filteredUsers(state) {
+      return state.filteredUsers;
     },
   },
   mutations: {
-    getProductsByUser(state, payload) {
-      console.log("Paylod is" + payload);
-      const user = state.users.find((u) => u.id === payload.id);
-      state.projects = user.projects;
-      // return state.users.filter((u) => u.id === payload.id);
+    filterUsers(state, payload) {
+      const filteredUsers = [];
+      state.users
+        .filter((u) =>
+          u.name.toLowerCase().includes(payload.enteredText.toLowerCase())
+        )
+        .forEach((e) => {
+          filteredUsers.push(e);
+        });
+      state.filteredUsers = filteredUsers;
+    },
+    sortAscending(state) {
+      state.filteredUsers.sort((a, b) => a.name.localeCompare(b.name));
+    },
+    sortDescending(state) {
+      state.filteredUsers.sort((a, b) => b.name.localeCompare(a.name));
+    },
+    filterProjects(state, payload) {
+      const user = state.filteredUsers.find((u) => u.id === payload.id);
+      const filteredProjects = user.projects;
+      state.filteredProjects = filteredProjects;
+      console.log(state.filteredProjects);
+    },
+  },
+  actions: {
+    filterUsers(context, payload) {
+      context.commit("filterUsers", payload);
+    },
+    sortAscending(context) {
+      context.commit("sortAscending");
+    },
+    sortDescending(context) {
+      context.commit("sortDescending");
     },
   },
 });

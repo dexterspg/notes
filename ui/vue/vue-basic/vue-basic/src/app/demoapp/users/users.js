@@ -3,7 +3,7 @@ export default [
     id: "u1",
     name: "Julie Jones",
     projects: [
-      "Create More courses",
+      "Recort the Vue Course",
       "Dive into data science topics",
       "Various things",
     ],
@@ -21,7 +21,7 @@ export default [
     id: "u3",
     name: "Maximilian Schwarzmuller",
     projects: [
-      "Create More courses",
+      "Create Agenda for next months",
       "Dive into data science topics",
       "Various things",
     ],
@@ -29,10 +29,6 @@ export default [
   {
     id: "u4",
     name: "Michael Miller",
-    projects: [
-      "Create More courses",
-      "Dive into data science topics",
-      "Various things",
-    ],
+    projects: [],
   },
 ];

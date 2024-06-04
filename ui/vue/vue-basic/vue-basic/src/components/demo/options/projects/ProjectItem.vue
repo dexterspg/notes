@@ -1,20 +1,14 @@
 <template>
-    <pre>ProjectItem</pre>
-    
+  <h3>{{ name }}</h3>
 </template>
 
 <script>
-    export default{
-        data(){
-            return{
-                
-            };
-        }
-
-    }
-
+export default {
+  props: ["name"],
+  data() {
+    return {};
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

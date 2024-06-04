@@ -4,16 +4,21 @@
       <h3>{{ name }}</h3>
     </div>
     <div>
-      <button>View Projects</button>
+      <button @click="viewProjects">View Projects</button>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  props: ["name"],
+  props: ["id", "name"],
   data() {
     return {};
+  },
+  methods: {
+    viewProjects() {
+      this.$store.commit("filterProjects", { id: this.id });
+    },
   },
 };
 </script>

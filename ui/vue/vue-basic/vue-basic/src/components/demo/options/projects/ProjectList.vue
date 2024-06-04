@@ -1,20 +1,34 @@
 <template>
-  <pre>ProjectList</pre>
-  <p>{{ getProjectsByUser() }}</p>
+  <BaseContainer>
+    <BaseSearch filterType="filterProjects" />
+    <div v-if="projects.length !== 0">
+      <ProjectItem
+        v-for="project in projects"
+        :key="project.index"
+        :name="project.name"
+      />
+    </div>
+    <div v-else>
+      <p>No Projects Found.</p>
+    </div>
+  </BaseContainer>
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
+import ProjectItem from "./ProjectItem.vue";
+import BaseSearch from "../UI/BaseSearch.vue";
+import BaseContainer from "../UI/BaseContainer.vue";
+import { mapGetters } from "vuex";
+
 export default {
-  data() {
-    return {};
+  components: {
+    ProjectItem,
+    BaseSearch,
+    BaseContainer,
   },
+  data() {},
   methods: {
-    // ...mapGetters(["getProjectsByUser"]),
-    getProjectsByUser() {
-      this.$store.commit("getProjectsByUser", { id: "u1" });
-      return this.$store.getters.projects;
-    },
+    ...mapGetters(["projects"]),
   },
 };
 </script>
