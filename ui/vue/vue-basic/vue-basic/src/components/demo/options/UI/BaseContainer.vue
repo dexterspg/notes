@@ -1,23 +1,14 @@
 <template>
-  <div>
-    <slot> </slot>
-  </div>
+  <section>
+    <slot></slot>
+  </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-};
-</script>
-
 <style scoped>
-div {
-  border: 1px solid black;
-  width: 40%;
-  padding: 1%;
-  margin: 2%;
-  display: inline-block;
+section {
+  margin: 2rem;
+  border: 1px solid #797979;
+  padding: 1rem;
+  flex: 1;
 }
 </style>

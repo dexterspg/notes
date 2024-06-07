@@ -9,10 +9,8 @@ import GlobalComponent from "./components/GlobalComponent.vue";
 // import App from "./app/mixinapp/AppTwo.vue";
 // import globalMixin from "./components/mixin/one/mixins/globalMixinLogger.js";
 
-
 // import App from "./app/compositionsapp/App.vue";
 import App from "./app/demoapp/options/App.vue";
-import store from "./app/demoapp/options/store/index.js";
 
 // const unmountApp = createApp(App);
 
@@ -27,7 +25,7 @@ const app = createApp(App);
 app.component("GlobalComponent", GlobalComponent);
 
 // app.use(router);
-app.use(store);
+// app.use(store);
 // app.mixin(globalMixin);
 
 // setTimeout(() => {

@@ -1,38 +1,41 @@
 <template>
-  <pre>BaseSearch</pre>
-  <input type="text" placeholder="Filter Items" v-model="enteredText" />
-  <div>
-    <button @click="sortAscending">Sort Ascending</button>
-    <button @click="sortDescending">Sort Descending</button>
-  </div>
+  <form>
+    <input
+      type="search"
+      @input="search"
+      :value="searchTerm"
+      placeholder="Filter items"
+    />
+  </form>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
-  props: ["filterType"],
-  data() {
-    return {
-      enteredText: "",
-    };
-  },
-  watch: {
-    enteredText(val) {
-      if (this.filterType != null) {
-        this.$store.dispatch(this.filterType, { enteredText: val });
-      }
-    },
-  },
+  props: ['searchTerm'],
+  emits: ['search'],
   methods: {
-    // sortAscending() {
-    //   this.$store.dispatch("sortAscending");
-    // },
-    // sortDescending() {
-    // this.$store.dispatch("sortDescending");
-    // },
-    ...mapActions(["sortAscending","sortDescending"]),
+    search(event) {
+      console.log(event.target.value);
+      this.$emit('search', event.target.value);
+    },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+input {
+  font: inherit;
+  width: 100%;
+  display: block;
+  padding: 0.15rem;
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00006b;
+  background-color: #eeeeff;
+}
+</style>
+
+
