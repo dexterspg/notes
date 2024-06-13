@@ -36,6 +36,7 @@ export default {
     BaseContainer,
   },
   props: ["users"],
+  emits: ["list-projects"],
   data() {
     return {
       enteredSearchTerm: "",
@@ -82,11 +83,12 @@ export default {
   },
   watch: {
     enteredSearchTerm(val) {
-      // setTimeout(() => {
-      if (val === this.enteredSearchTerm) {
-        this.activeSearchTerm = val;
-      }
-      // }, 300);
+        //add a timeout to to allow search to take time so that not every entered character the search is executed
+      setTimeout(() => {
+        if (val === this.enteredSearchTerm) {
+          this.activeSearchTerm = val;
+        }
+      }, 300);
     },
   },
 };

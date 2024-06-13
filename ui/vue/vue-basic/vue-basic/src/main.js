@@ -10,7 +10,8 @@ import GlobalComponent from "./components/GlobalComponent.vue";
 // import globalMixin from "./components/mixin/one/mixins/globalMixinLogger.js";
 
 // import App from "./app/compositionsapp/App.vue";
-import App from "./app/demoapp/options/App.vue";
+// import App from "./app/demoapp/options/App.vue";
+import App from "./app/demoapp/composition/App.vue";
 
 // const unmountApp = createApp(App);
 
