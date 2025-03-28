@@ -25,4 +25,5 @@ public class Job {
     private String location;
 
     private Long companyId;
+
 }

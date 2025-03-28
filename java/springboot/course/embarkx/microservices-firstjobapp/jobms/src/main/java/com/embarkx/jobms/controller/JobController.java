@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.embarkx.jobms.dto.JobWithCompanyDTO;
+import com.embarkx.jobms.dto.JobDTO;
 import com.embarkx.jobms.model.Job;
 import com.embarkx.jobms.service.JobService;
 
@@ -28,15 +28,15 @@ public class JobController {
 
     // Get all jobs
     @GetMapping
-    public ResponseEntity<List<JobWithCompanyDTO>> getAllJobs() {
-        List<JobWithCompanyDTO> jobs = jobService.findAll();
+    public ResponseEntity<List<JobDTO>> getAllJobs() {
+        List<JobDTO> jobs = jobService.findAll();
         return new ResponseEntity<>(jobs, HttpStatus.OK);
     }
 
     // Get a specific job by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Job> findJobById(@PathVariable long id) {
-        Optional<Job> job = jobService.findJobById(id);
+    public ResponseEntity<JobDTO> findJobById(@PathVariable long id) {
+        Optional<JobDTO> job = jobService.findJobById(id);
         if (job.isPresent()) {
             return new ResponseEntity<>(job.get(), HttpStatus.OK);
         } else {

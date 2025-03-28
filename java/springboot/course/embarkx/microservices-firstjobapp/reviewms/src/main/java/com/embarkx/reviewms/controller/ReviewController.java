@@ -57,7 +57,5 @@ public class ReviewController {
     public ResponseEntity<Void> deleteReview(@PathVariable Long reviewId) {
         return reviewService.deleteReview(reviewId) ? ResponseEntity.noContent().build() :
         ResponseEntity.notFound().build();
-                
-    
     }
 }
